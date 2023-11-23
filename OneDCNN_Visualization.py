@@ -5,6 +5,8 @@ import numpy as np
 
 from functions.OneDCNN_Utils import read_pkl
 from functions.OneDCNN_Utils import change_bar_width
+
+
 camPath    = 'data/OneDCNN/CAM/'
 resultPath = 'data/OneDCNN/savedResult/'
 figPath    = 'fig/'
@@ -35,7 +37,7 @@ for epo_type in epochTypes:
 
     #  =================================    plot line-CAM  ================================
 
-    prestim = 0#-500 if epo_type == 'DecisionMaking' else -200
+    prestim = 0
     posstim = 3000 if epo_type == 'DecisionMaking' else 1000
     tick_spacing = 500
 
@@ -60,6 +62,7 @@ for epo_type in epochTypes:
     plt.close('all')
 
     # ============================= plot classification accuracy ===============================
+    
     bar_ylim = [0.35, 0.8] if epo_type == 'DecisionMaking' else [0.5,0.9]
     fig_size = (6,5) if epo_type == 'DecisionMaking' else (3,5)
 
@@ -75,5 +78,7 @@ for epo_type in epochTypes:
     plt.grid(axis='y')
     plt.tight_layout()
     plt.savefig('%s%s/Barplot_classification_result.pdf' % (figPath, epo_type))
+
+
 
 
