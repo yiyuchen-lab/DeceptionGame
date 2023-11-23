@@ -102,36 +102,6 @@ def creat_path(dir_name):
         print("Directory ", dir_name, " already exists")
 
 
-
-def locate_file(pattern, folder=False, full_path=True, root=os.curdir):
-    """
-    Locate all files matching supplied filename pattern in and below supplied root directory
-
-    :param  str    pattern: pattern of file name
-    :param  bool    folder: whether to search folder name instead of file name
-    :param  str       root: root dir to search
-    :param  bool full_path: whether to return full path of the target file instead of only the name of file
-    :return list locations: list of locations of files match the pattern
-    """
-    locations = []
-    for path, dirs, files in os.walk(os.path.relpath(root)):
-        if folder:
-            for dir_name in fnmatch.filter(dirs, pattern):
-                if full_path:
-                    locations.append(os.path.join(path, dir_name))
-                else:
-                    locations.append(dir_name)
-        else:
-            for filename in fnmatch.filter(files, pattern):
-                if full_path:
-                    locations.append(os.path.join(path, filename))
-                else:
-                    locations.append(filename)
-
-    return locations
-
-
-
 def select_channels(data_x, select_ch, data_ch=None, chan_dim = 1):
 
     if isinstance(select_ch[0],str):
