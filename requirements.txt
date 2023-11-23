@@ -1,0 +1,10 @@
+alive_progress
+matplotlib
+numpy
+pandas
+scikit_learn
+scipy
+seaborn
+tensorflow
+tensorflow_gpu
+tf_explain
