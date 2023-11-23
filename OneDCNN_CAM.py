@@ -45,8 +45,6 @@ for epo_type in epochTypes:
 
     with alive_bar(int(n_biClass * n_subjs * n_folds), force_tty=True) as bar:
 
-        model_path = locate_file('*%s*' % modelPath, folder=True)
-
         cams_class=[]
 
         for biClass_idx, classes in enumerate(bi_class):  # loop through binary classes
