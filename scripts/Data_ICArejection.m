@@ -52,7 +52,7 @@ for typeName = opt.epoch_type
             end
             
             %% epoch data
-            EEG_selected = pop_selectevent(EEG,'type',event_number, 'deleteevents','on');
+            EEG_selected = pop_selectevent(EEG_ica,'type',event_number, 'deleteevents','on');
             EEG_epoch    = pop_epoch(EEG_selected,{},time_interval);      
             
             %% baseline correction
